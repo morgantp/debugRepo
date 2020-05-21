@@ -1,0 +1,84 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark text-uppercase"> <!-- the code for the start of my nav bar -->
+    <a class="navbar-brand" href="/">Health Bud</a> <!-- referencing the home page base -->
+    <button type="button" class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded"
+      data-toggle="collapse" data-target="#mobileMenu">
+      <i class="fas fa-bars"></i>
+    </button>
+ <div class="collapse navbar-collapse" id="mobileMenu">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="calender.html">Calender</a> <!-- the first nav link within my nav bar and its reference point -->
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="help.html">Guidance</a> <!-- the second nav link within my nav bar and its reference point -->
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href=".html">Videos</a> <!-- the third nav link within my nav bar and its reference point -->
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="login.html">Log Out</a> <!-- the last nav link within my nav bar and its reference point -->
+        </li>
+      </ul>
+    </div>
+  </nav>
+    <input type="checkbox" id = "check">
+  <label for = "check">
+    <i class = "fas fa-bars" id="btn"></i>
+    <i class = "fas fa-times" id="cancel"></i>
+  </label>
+  <div class ="sidebar">
+    <header> Guidance </header>
+    <ul>
+      <li><a href = "/panic" >Panic Attacks</a>
+        <li><a href = "/depression" >Depression</a>
+          <li><a href = "/bipolar" >Bipolar Disorder</a>
+          <li><a href = "/eating" >Eating Disorder</a>
+</div>
+
+  <div class="Guidance"> <!-- showing that this class is for the rows in my column -->
+ 
+        <div class="col-10-Guidance"> <!-- my about me column -->
+          <div class="card cardGuidance w-100 animated rollIn">
+               <h4>Anxiety</h4>
+            <div class="card-body">
+            <img src = "assets/anxiety.jpg" <!-- the text which i want displayed under the header -->  
+            <h5>This page will provide information on Anxiety and how you can be able to better handle your anxiety in situations.</h5>
+            </div>
+          </div>
+            {{!-- <div class="row">
+                <div class="card-body">
+                 <h5>Ever since I was young I've primarily been interested in football and I played for teams for about 7-8 years until a knee injury limits myself these days. I have supported West Brom since I was young and love going to the games as much as I can!</h5> <!-- the text which is shown underneath my header, badges and main image --> --}}
+                </div>
+              </div>
+            </div>
+            <div class="container"> <!-- this  is the container which my columns go inside -->
+      {{!-- <hr> --}}
+        <div class="col-12-about3">
+          <div class="card-group">
+            <div class="col-lg-6 col-12 col-md-3">
+              <div class="card cardBlue animated rollIn">
+                <h2> Types of Anxiety </h2>
+                <img src="assets/inspo2.png" class="card-img-top" width="600" height="400"> <!-- sourcing the main body image -->
+                <div class="card-body">
+                <h4>Generalised anxiety disorder</h4>
+                <h4>Social Anxiety </h4>
+                <h4>Specific Phobias</h4>
+                <h4>Panic Disorder</h4>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-12 col-md-3">
+              <div class="card cardBlue animated rollIn">
+                <h2> How to deal with Anxiety? </h2>
+                <img src="assets/inspo.jpg" class="card-img-top" width="600" height="400">
+                <div class="card-body">
+                </div>
+              </div>
+            </div>
+      </div>
+    </div><!-- row close -->
+    </div>
+  </div> <!-- container close -->
+  <footer class="text-center mt-4 pt-4"> <!-- the start of my footer. centering the text and applying margin top and padding top -->
+        <small>Copyright &copy; </small> <!-- adding the Copyright text and logo at the bottom of my footer -->
+</footer>
