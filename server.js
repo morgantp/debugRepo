@@ -199,10 +199,9 @@ app.get('/anxiety', (req, res) => {
 // app.get('/about', (req, res) => {
 //     //use res.render to display our about template, using the main layout
 //     res.render('about', { layout: 'main' });
-// });
-// 'mongodb+srv://Smith:passwordfullstack@clusterfullstack-quihk.mongodb.net/contactManager?retryWrites=true&w=majority'
+// });mongodb+srv://Smith:passwordfullstack@clusterfullstack-quihk.mongodb.net/contactManager?retryWrites=true&w=majority'
 // mongoose.connect('mongodb://localhost:27017/handlebars'
-mongoose.connect(monogoURL, {
+mongoose.connect(monogoURL, {  // connected back to the local database
     useUnifiedTopology: true,
     useNewUrlParser: true
 })
