@@ -9,7 +9,7 @@ var bcrpyt = require('bcryptjs');
 passport = require('passport');
 const session = require('express-session');
 
-const port = process.env.port || 3000; // if we're running locally then pass in port 3000
+const port = process.env.PORT || 3000; // if we're running locally then pass in port 3000
 const mongoURL = process.env.mongoURL ||  'mongodb://localhost:27017/handlebars';
 
 const { isAuth } = require('./middleware/isAuth');
@@ -213,6 +213,6 @@ mongoose.connect(monogoURL, {  // connected back to the local database
     });
 
 //Listening for requests on port 3000
-app.listen(port, () => {
+app.listen(PORT, () => {
     console.log(`Server listening on port ${port}`);
 });
