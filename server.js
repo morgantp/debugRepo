@@ -201,7 +201,7 @@ app.get('/anxiety', (req, res) => {
 //     res.render('about', { layout: 'main' });
 // });mongodb+srv://Smith:passwordfullstack@clusterfullstack-quihk.mongodb.net/contactManager?retryWrites=true&w=majority'
 // mongoose.connect('mongodb://localhost:27017/handlebars'
-mongoose.connect(monogoURL, {  // connected back to the local database
+mongoose.connect(mongoURL, {  // connected back to the local database
     useUnifiedTopology: true,
     useNewUrlParser: true
 })
@@ -213,6 +213,6 @@ mongoose.connect(monogoURL, {  // connected back to the local database
     });
 
 //Listening for requests on port 3000
-app.listen(PORT, () => {
+app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
 });
