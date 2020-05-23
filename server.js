@@ -9,6 +9,9 @@ var bcrpyt = require('bcryptjs');
 passport = require('passport');
 const session = require('express-session');
 
+const port = process.env.port || 3000; // if we're running locally then pass in port 3000
+const mongoURL = process.env.mongoURL ||  'mongodb://localhost:27017/handlebars';
+
 const { isAuth } = require('./middleware/isAuth');
 require('./middleware/passport')(passport);
 
@@ -46,22 +49,21 @@ app.engine('hbs', handlebars({
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// app.get('/', isAuth, (req, res) => {
-//     try {
-//     Contact.find({ user: req.user.id }).lean()
-//         .exec((err, contacts) => {
-//             if (contacts.length) {
-//                 res.render('home', { layout: 'main', contacts: contacts, contactsExist: true, username: req.user.username });
-//             } else {
-//                 res.render('home', { layout: 'main', contacts: contacts, contactsExist: false,});
-//             }
-//         });
-//     } catch (err) {
-//         console.log(err.message);
-//         res.status(500).send('Server Error')
-//     }
-
-// });
+app.get('/', isAuth, (req, res) => {
+    try {
+    Contact.find({ user: req.user.id }).lean()
+        .exec((err, contacts) => {
+            if (contacts.length) {
+                res.render('home', { layout: 'main', contacts: contacts, contactsExist: true, username: req.user.username });
+            } else {
+                res.render('home', { layout: 'main', contacts: contacts, contactsExist: false,});
+            }
+        });
+    } catch (err) {
+        console.log(err.message);
+        res.status(500).send('Server Error')
+    }
+});
 
 app.get('/signout', (req, res)=>{
     req.logout();
@@ -198,8 +200,9 @@ app.get('/anxiety', (req, res) => {
 //     //use res.render to display our about template, using the main layout
 //     res.render('about', { layout: 'main' });
 // });
+// 'mongodb+srv://Smith:passwordfullstack@clusterfullstack-quihk.mongodb.net/contactManager?retryWrites=true&w=majority'
 // mongoose.connect('mongodb://localhost:27017/handlebars'
-mongoose.connect('mongodb+srv://Smith:passwordfullstack@clusterfullstack-quihk.mongodb.net/contactManager?retryWrites=true&w=majority', {
+mongoose.connect(monogoURL, {
     useUnifiedTopology: true,
     useNewUrlParser: true
 })
@@ -211,6 +214,6 @@ mongoose.connect('mongodb+srv://Smith:passwordfullstack@clusterfullstack-quihk.m
     });
 
 //Listening for requests on port 3000
-app.listen(3000, () => {
-    console.log('Server listening on port 3000');
+app.listen(port, () => {
+    console.log(`Server listening on port ${port}`);
 });
