@@ -549,22 +549,21 @@ td:hover{
 }
 
 /* panic css */
+
+.panictitle{
+color: white;
+padding-left: 650px;
+padding-top: 20px;
+}
+
 .container-panic{
     padding-top: 10px;
     padding-left: 225px;
 }
-/* .column-panic{
-width:1000px;
-height:1000px;
-padding-left: 50px;
-padding-right: 50px;
-padding-bottom: 1px;
-background-color:yellow;
-border:5px solid black;
-} */
 
 .img-panic{
-    width:1000px;
+    padding-left: 80px;
+    max-width:900px;
 }
 
 
@@ -583,3 +582,89 @@ h2.howtodealpanic{
 
 /* panic css ends */
 /* depression css */
+
+.depressiontitle{
+    color: white;
+    padding-left: 650px;
+    padding-top: 20px;
+    }
+
+.img-depression {
+    padding-left: 80px;
+    max-width:900px;
+}
+
+.column-depression {
+    background-color:blue;
+    border:2px solid black;
+    }
+
+.depression{
+color:white;
+ }
+
+ /* depression css ends */
+ /* anxiety css */
+
+ .anxiety{
+    color:white;
+     }
+
+.img-anxiety{
+    padding-left: 80px;
+    max-width:900px;
+}
+
+.column-anxiety {
+    background-color:blue;
+    border:2px solid black;
+    }
+
+/* anxiety css ends */
+/* bipolar css */
+
+.bipolartitle{
+    color: white;
+    padding-left: 650px;
+    padding-top: 20px;
+}
+
+.bipolar{
+    color:white;
+     }
+
+.img-bipolar{
+    padding-left: 80px;
+    max-width:1000px;
+}
+
+.column-bipolar {
+    background-color:blue;
+    border:2px solid black;
+    }
+
+/* bipolar end */
+
+/* eating css */
+.eatingtitle{
+    color: white;
+    padding-left: 650px;
+    padding-top: 20px;
+}
+
+.eating{
+    color:white;
+     }
+
+.img-eating{
+    padding-left: 80px;
+    width:900px;
+    max-width:1000px;
+}
+
+.column-eating {
+    background-color:blue;
+    border:2px solid black;
+    }
+
+/* eating css end */

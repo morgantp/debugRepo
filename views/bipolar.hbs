@@ -1,5 +1,5 @@
  <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-uppercase"> <!-- the code for the start of my nav bar -->
-    <a class = "waves-effect waves-light btn btn-right" href = "/signout"></a> --}}
+    <a class = "waves-effect waves-light btn btn-right" href = "/signout"></a> 
     <img src= "assets/logo.png" class ="logo-nav" >
     {{!-- <a class="navbar-brand" href="/">Health Bud</a> <!-- referencing the home page base --> --}}
     <button type="button" class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded"
@@ -25,15 +25,46 @@
   </nav>
   </nav>
 
-  <div class="col-10-Bipolar"> 
-          <div class="card cardAnxiety w-100 animated rollIn">
-             <div class="col-lg-6 col-12 col-md-3"></div>
-               <h4>Anxiety</h4>
-            <div class="card-body">
-            <img src = "assets/anxiety.jpg" class = "imgAnxiety"<!-- the text which i want displayed under the header -->  
-            <h5>This page will provide information on Anxiety and how you can be able to better handle your anxiety in situations.</h5>
-            </div>
-          </div>
+   <input type="checkbox" id = "check">
+  <label for = "check">
+    <i class = "fas fa-bars" id="btn"></i>
+    <i class = "fas fa-times" id="cancel"></i>
+  </label>
+  <div class ="sidebar">
+    <header> Guidance </header>
+    <ul>
+      <li><a href = "/anxiety" >Anxiety</a>
+      <li><a href = "/panic" >Panic Attacks</a>
+        <li><a href = "/depression" >Depression</a>
+          <li><a href = "/bipolar" >Bipolar Disorder</a>
+          <li><a href = "/eating" >Eating Disorder</a>
+</div>
+
+
+<h1 class = "bipolartitle"> Bipolar Disorder</h1>
+    <div class = "row"> 
+    <div class = "col-md-2"></div>
+    <div class ="col-md-8 col-xs-12 bipolar">
+    <div class = "row">
+    <div class = "col-xs-12">
+    <img src = "assets/bipolar.png" class="img-bipolar" class ="img-responsive">
+    </div>
+    </div>
+    <div class = "row">
+    <div class = "col-6 column-bipolar">
+     <h2 >What is Bipolar Disorder?</h2>
+    <h4 >A Panic Attack/Disorder is when you regularly have sudden attacks of panic or fear. 
+      Someone with this disorder suffers feelings of anxiety,stress and panic regularly at any time for no reason at all.</h4>
+</div>
+ <div class = "col-6 column-bipolar" >
+  <h2 >How to deal with Bipolar?</h2>
+  <h4 >hi</h4>
+  </div>
+  </div>
+  </div>
+  <div class = "col-md-2"></div>
+  </div>
+  
   <footer class="text-center mt-4 pt-4"> <!-- the start of my footer. centering the text and applying margin top and padding top -->
         <small>Copyright &copy; </small> <!-- adding the Copyright text and logo at the bottom of my footer -->
 </footer>
