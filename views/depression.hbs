@@ -1,5 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark text-uppercase"> <!-- the code for the start of my nav bar -->
-    <a class="navbar-brand" href="/">Health Bud</a> <!-- referencing the home page base -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-uppercase"> <!-- the code for the start of my nav bar -->
+    <a class = "waves-effect waves-light btn btn-right" href = "/signout"></a> 
+    <img src= "assets/logo.png" class ="logo-nav" >
+
     <button type="button" class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded"
       data-toggle="collapse" data-target="#mobileMenu">
       <i class="fas fa-bars"></i>
@@ -7,20 +9,35 @@
  <div class="collapse navbar-collapse" id="mobileMenu">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="calender.html">Calender</a> <!-- the first nav link within my nav bar and its reference point -->
+          <a class="nav-link" href="/calender">Calender</a> <!-- the first nav link within my nav bar and its reference point -->
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="help.html">Guidance</a> <!-- the second nav link within my nav bar and its reference point -->
+          <a class="nav-link" href="/help">Guidance</a> <!-- the second nav link within my nav bar and its reference point -->
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact Us</a> <!-- the second nav link within my nav bar and its reference point -->
         </li>
         <li class="nav-item">
-          <a class="nav-link" href=".html">Videos</a> <!-- the third nav link within my nav bar and its reference point -->
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="login.html">Log Out</a> <!-- the last nav link within my nav bar and its reference point -->
+            <a class="nav-link" href="/">Log Out</a> <!-- the last nav link within my nav bar and its reference point -->
         </li>
       </ul>
     </div>
   </nav>
+  </nav>
+    <input type="checkbox" id = "check">
+  <label for = "check">
+    <i class = "fas fa-bars" id="btn"></i>
+    <i class = "fas fa-times" id="cancel"></i>
+  </label>
+  <div class ="sidebar">
+    <header> Guidance </header>
+    <ul>
+      <li><a href = "/anxiety" >Anxiety</a>
+      <li><a href = "/panic" >Panic Attacks</a>
+          <li><a href = "/bipolar" >Bipolar Disorder</a>
+          <li><a href = "/eating" >Eating Disorder</a>
+</div>
+
   <footer class="text-center mt-4 pt-4"> <!-- the start of my footer. centering the text and applying margin top and padding top -->
         <small>Copyright &copy; </small> <!-- adding the Copyright text and logo at the bottom of my footer -->
 </footer>

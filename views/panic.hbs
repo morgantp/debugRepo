@@ -1,5 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark text-uppercase"> <!-- the code for the start of my nav bar -->
-    <a class="navbar-brand" href="/">Health Bud</a> <!-- referencing the home page base -->
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-uppercase"> <!-- the code for the start of my nav bar -->
+    <a class = "waves-effect waves-light btn btn-right" href = "/signout"></a> 
+  <img src= "assets/logo.png" class ="logo-nav" >
+ </div>
+    {{!-- <a class="navbar-brand" href="/">Health Bud</a> <!-- referencing the home page base --> --}}
     <button type="button" class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded"
       data-toggle="collapse" data-target="#mobileMenu">
       <i class="fas fa-bars"></i>
@@ -12,13 +15,56 @@
         <li class="nav-item">
           <a class="nav-link" href="/help">Guidance</a> <!-- the second nav link within my nav bar and its reference point -->
         </li>
+         <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact Us</a> <!-- the second nav link within my nav bar and its reference point -->
+        </li>
         <li class="nav-item">
-            <a class="nav-link" href="/login">Log Out</a> <!-- the last nav link within my nav bar and its reference point -->
+            <a class="nav-link" href="/">Log Out</a> <!-- the last nav link within my nav bar and its reference point -->
         </li>
       </ul>
     </div>
   </nav>
   </nav>
+    <input type="checkbox" id = "check">
+  <label for = "check">
+    <i class = "fas fa-bars" id="btn"></i>
+    <i class = "fas fa-times" id="cancel"></i>
+  </label>
+  <div class ="sidebar">
+    <header> Guidance </header>
+    <ul>
+      <li><a href = "/anxiety" >Anxiety</a>
+        <li><a href = "/depression" >Depression</a>
+          <li><a href = "/bipolar" >Bipolar Disorder</a>
+          <li><a href = "/eating" >Eating Disorder</a>
+</div>
+
+<h1> Panic Attacks </h1>
+    <div class = "row"> 
+    <div class = "col-md-2"></div>
+    <div class ="col-md-8 col-xs-12 panicattack">
+    <div class = "row">
+    <div class = "col-xs-12">
+    <img src = "assets/panicattack.jpg" class="img-panic" class ="img-responsive">
+    </div>
+    </div>
+    <div class = "row">
+    <div class = "col-6 column-panic">
+     <h2 >What is a Panic Attack?</h2>
+    <h4 >A Panic Attack/Disorder is when you regularly have sudden attacks of panic or fear. 
+      Someone with this disorder suffers feelings of anxiety,stress and panic regularly at any time for no reason at all.</h4>
+</div>
+ <div class = "col-6 column-panic" >
+  <h2 >How to deal with Panic Attacks?</h2>
+  <h4 >hi</h4>
+  </div>
+  </div>
+  </div>
+  <div class = "col-md-2"></div>
+  </div>
+  {{!-- </div>
+  </div> --}}
+
 <footer class="text-center mt-4 pt-4"> <!-- the start of my footer. centering the text and applying margin top and padding top -->
         <small>Copyright &copy; </small> <!-- adding the Copyright text and logo at the bottom of my footer -->
 </footer>
