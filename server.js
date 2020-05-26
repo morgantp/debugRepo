@@ -108,13 +108,14 @@ app.post('/signin', (req, res, next) => {
             successRedirect: '/home',
             failureRedirect: '/?incorrectLogin' // fix this?
         })(req, res, next);
-        // if (err) throw err
-        // console.log('logged in');
-        // res.send('logged in');
     } catch (err) {
         console.log(err.message);
         res.status(500).send('Server Error')
     }
+})
+
+app.post('/forgottenpass', (req,res) => {
+res.redirect('/signin')
 })
 
 app.post('/addContact', (req, res) => {
@@ -139,11 +140,12 @@ app.post('/addContact', (req, res) => {
 
 
 app.get('/', (req, res) => {
-    res.render('login', {layout: 'main'});
+    res.render('signin', {layout: 'main'});
 })
-app.get('login', (req, res) => {
-    res.render('login', {layout: 'main'});
-})
+
+// app.get('login', (req, res) => {
+//     res.render('login', {layout: 'main'});
+// })
 app.get('/signin', (req, res) => {
     res.render('signin', {layout: 'main'});
 })
@@ -152,9 +154,9 @@ app.get('/signup', (req, res) => {
     res.render('signup', {layout: 'main'});
 })
 
-app.get('/create', (req, res) => {
-    res.render('create', {layout: 'main'});
-})
+// app.get('/create', (req, res) => {
+//     res.render('create', {layout: 'main'});
+// })
 
 app.get('/forgottenpass', (req, res) => {
     res.render('forgottenpass', {layout: 'main'});
@@ -196,9 +198,6 @@ app.get('/anxiety', (req, res) => {
     res.render('anxiety', {layout: 'main'});
 })
 
-// app.get('/about', (req, res) => {
-//     //use res.render to display our about template, using the main layout
-//     res.render('about', { layout: 'main' });
 // });mongodb+srv://Smith:passwordfullstack@clusterfullstack-quihk.mongodb.net/contactManager?retryWrites=true&w=majority'
 // mongoose.connect('mongodb://localhost:27017/handlebars'
 mongoose.connect(mongoURL, {  // connected back to the local database
