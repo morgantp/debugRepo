@@ -31,6 +31,12 @@ footer{
     /* position:fixed; */
 }
 
+.loginhere{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 40px;
+}
 /* signin styles*/
 
 .loginbox{

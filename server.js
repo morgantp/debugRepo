@@ -118,10 +118,6 @@ app.post('/signin', (req, res, next) => {
     }
 })
 
-// app.post('/forgottenpass', (req,res) => {
-// res.redirect('/signin')
-// })
-
 app.post('/addContact', (req, res) => {
     //users are destructured to extract the name, email and number from the req
     const { name, email, number } = req.body;
@@ -153,7 +149,11 @@ try {
 })
 
 app.get('/', (req, res) => {
-    res.render('signin', {layout: 'main'});
+    res.render('login', {layout: 'main'});
+})
+
+app.get('/login' , (req, res) => {
+    res.render('login', {layout: 'main'});
 })
 
 app.get('/signin', (req, res) => {
@@ -164,9 +164,9 @@ app.get('/signup', (req, res) => {
     res.render('signup', {layout: 'main'});
 })
 
-// app.get('/create', (req, res) => {
-//     res.render('create', {layout: 'main'});
-// })
+app.get('/create', (req, res) => {
+    res.render('create', {layout: 'main'});
+})
 
 // app.get('/forgottenpass', (req, res) => {
 //     res.render('forgottenpass', {layout: 'main'});
