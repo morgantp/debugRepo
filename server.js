@@ -12,12 +12,15 @@ const session = require('express-session');
 const port = process.env.PORT || 3000; // if we're running locally then pass in port 3000
 const mongoURL = process.env.mongoURL ||  'mongodb://localhost:27017/handlebars';
 
-const { isAuth } = require('./middleware/isAuth');
 require('./middleware/passport')(passport);
+const { isAuth } = require('./middleware/isAuth');
+
 
 const Contact = require('./models/Contact');
 const User = require('./models/User');
 
+app.use(passport.initialize());
+app.use(passport.session()); //session handles it post login
 
 app.use(express.static('public'));
 app.use(express.static('assets'));
@@ -31,8 +34,6 @@ app.use(
     })
 );
 
-app.use(passport.initialize());
-app.use(passport.session()); //session handles it post login
 // body parser structures the request into a format that's simple to use
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false}))
@@ -49,8 +50,11 @@ app.engine('hbs', handlebars({
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.get('/', isAuth, (req, res) => {
+
+app.get('/home', isAuth, (req, res) => {
     try {
+        var users;
+        var contacts;
     Contact.find({ user: req.user.id }).lean()
         .exec((err, contacts) => {
             if (contacts.length) {
@@ -139,7 +143,7 @@ app.post('/addContact', (req, res) => {
 })
 
 
-app.get('/', (req, res) => {
+app.get('/signin', (req, res) => {
 try {
     res.render('signin', {layout: 'main'});
 } catch (err) {
@@ -148,9 +152,10 @@ try {
 }
 })
 
-// app.get('login', (req, res) => {
-//     res.render('login', {layout: 'main'});
-// })
+app.get('/', (req, res) => {
+    res.render('signin', {layout: 'main'});
+})
+
 app.get('/signin', (req, res) => {
     res.render('signin', {layout: 'main'});
 })
@@ -179,9 +184,9 @@ app.get('/contact', (req, res) => {
     res.render('contact', {layout: 'main'});
 })
 
-app.get('/home', (req, res) => {
-    res.render('home', {layout: 'main'});
-})
+// app.get('/home', (req, res) => {
+//     res.render('home', {layout: 'main'});
+// })
 
 app.get('/panic', (req, res) => {
     res.render('panic', {layout: 'main'});
