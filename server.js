@@ -114,9 +114,9 @@ app.post('/signin', (req, res, next) => {
     }
 })
 
-app.post('/forgottenpass', (req,res) => {
-res.redirect('/signin')
-})
+// app.post('/forgottenpass', (req,res) => {
+// res.redirect('/signin')
+// })
 
 app.post('/addContact', (req, res) => {
     //users are destructured to extract the name, email and number from the req
@@ -140,7 +140,12 @@ app.post('/addContact', (req, res) => {
 
 
 app.get('/', (req, res) => {
+try {
     res.render('signin', {layout: 'main'});
+} catch (err) {
+    console.log(err.message);
+    res.status(500).send('Server Error')
+}
 })
 
 // app.get('login', (req, res) => {
@@ -158,9 +163,9 @@ app.get('/signup', (req, res) => {
 //     res.render('create', {layout: 'main'});
 // })
 
-app.get('/forgottenpass', (req, res) => {
-    res.render('forgottenpass', {layout: 'main'});
-})
+// app.get('/forgottenpass', (req, res) => {
+//     res.render('forgottenpass', {layout: 'main'});
+// })
 
 app.get('/help', (req, res) => {
     res.render('help', {layout: 'main'});
