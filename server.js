@@ -6,34 +6,31 @@ var bodyParser = require('body-parser');
 //Require the handlebars express package
 var handlebars = require('express-handlebars');
 var bcrpyt = require('bcryptjs');
-passport = require('passport');
+const passport = require('passport');
 const session = require('express-session');
 
 const port = process.env.PORT || 3000; // if we're running locally then pass in port 3000
 const mongoURL = process.env.mongoURL ||  'mongodb://localhost:27017/handlebars';
 
-require('./middleware/passport')(passport);
+require('./middleware/passport')(passport)
 const { isAuth } = require('./middleware/isAuth');
 
 
 const Contact = require('./models/Contact');
 const User = require('./models/User');
 
-app.use(passport.initialize());
-app.use(passport.session()); //session handles it post login
 
 app.use(express.static('public'));
-app.use(express.static('assets'));
-
 app.use(
-    session({//using express-session
-    secret: 'mySecret', // used to create a token similar to bcrpyt- gives individual access to the session
-    resave: true,
-    saveUnitialized: true,
-    cookie: { maxAge: 60000 }
+    session({
+        secret: 'mySecret',
+        resave: true,
+        saveUninitialized: true,
     })
 );
 
+app.use(passport.initialize());
+app.use(passport.session()); //session handles it post login
 // body parser structures the request into a format that's simple to use
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false}))
@@ -50,11 +47,8 @@ app.engine('hbs', handlebars({
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-
 app.get('/home', isAuth, (req, res) => {
     try {
-        var users;
-        var contacts;
     Contact.find({ user: req.user.id }).lean()
         .exec((err, contacts) => {
             if (contacts.length) {
@@ -118,6 +112,10 @@ app.post('/signin', (req, res, next) => {
     }
 })
 
+// app.post('/forgottenpass', (req,res) => {
+// res.redirect('/signin')
+// })
+
 app.post('/addContact', (req, res) => {
     //users are destructured to extract the name, email and number from the req
     const { name, email, number } = req.body;
@@ -139,7 +137,7 @@ app.post('/addContact', (req, res) => {
 })
 
 
-app.get('/signin', (req, res) => {
+app.get('/', (req, res) => {
 try {
     res.render('signin', {layout: 'main'});
 } catch (err) {
@@ -148,21 +146,6 @@ try {
 }
 })
 
-app.get('/', (req, res) => {
-    res.render('login', {layout: 'main'});
-})
-
-app.get('/login' , (req, res) => {
-    res.render('login', {layout: 'main'});
-})
-
-app.get('/signin', (req, res) => {
-    res.render('signin', {layout: 'main'});
-})
-
-app.get('/signup', (req, res) => {
-    res.render('signup', {layout: 'main'});
-})
 
 app.get('/create', (req, res) => {
     res.render('create', {layout: 'main'});
@@ -184,9 +167,9 @@ app.get('/contact', (req, res) => {
     res.render('contact', {layout: 'main'});
 })
 
-// app.get('/home', (req, res) => {
-//     res.render('home', {layout: 'main'});
-// })
+app.get('/home', (req, res) => {
+    res.render('home', {layout: 'main'});
+})
 
 app.get('/panic', (req, res) => {
     res.render('panic', {layout: 'main'});
